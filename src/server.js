@@ -1,7 +1,21 @@
 const app = require("./app")
-const http = require("http")
-const server = http.createServer(app)
+// const http = require("http")
+// // const server = http.createServer(app)
 const { _lib, _config } = require('../modules')
+
+const https = require('https');
+const fs = require('fs');
+
+var dad = fs.readFileSync('../ssl/certificate_authority_bundle.pem', 'utf8')
+var privateKey = fs.readFileSync('../ssl/private_key.pem', 'utf8')
+var certificate = fs.readFileSync('../ssl/certificate.pem', 'utf8')
+var credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: dad
+};
+
+const server = https.createServer(credentials, app);
 
 _lib.mongoose
     .connect(_config.database_uri, {
