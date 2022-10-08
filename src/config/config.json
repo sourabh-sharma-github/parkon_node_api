@@ -1,0 +1,12 @@
+{
+    "development": {
+        "database_uri": "mongodb://localhost:27017/parkon_api",
+        "port": 8000,
+        "secret": "jwt_please_change"
+    },
+    "production": {
+        "database_uri": "mongodb://localhost:27017/parkon_api",
+        "port": 8000,
+        "secret": "jwt_please_change"
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "parkon_api",
+  "version": "1.0.0",
+  "description": "lmv parking management system",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sourabh sharma",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-validation": "^4.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.20",
+    "parse-error": "^0.2.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0"
+  }
+}
