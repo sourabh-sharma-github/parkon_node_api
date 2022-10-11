@@ -3,4 +3,5 @@ module.exports = {
     ...require('./owners.valdation'),
     ...require('./properties.validation'),
     ...require('./users.validation'),
+    ...require('./parkig_slot.validation')
 }

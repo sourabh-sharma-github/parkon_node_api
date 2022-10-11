@@ -3,4 +3,5 @@ module.exports = {
     ...require('./properties.controller'),
     ...require('./properties.controller'),
     ...require('./users.controller'),
+    ...require('./parking_slots.controller')
 }

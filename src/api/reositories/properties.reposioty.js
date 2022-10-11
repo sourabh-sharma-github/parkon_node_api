@@ -1,4 +1,4 @@
-const Properties = require('../../models/properties.model');
+const { Properties } = require('../../models');
 
 module.exports = {
     createProperty: async (userId, payload) => {
@@ -7,5 +7,10 @@ module.exports = {
         }).save();
     },
 
-    
+    // getPropertyForDashboard: async (_id) => {
+    //     return await Properties
+    //         .findOne({ _id })
+    //         .select('_id createdAt floorOne floorTwo')
+    // }
+
 }
