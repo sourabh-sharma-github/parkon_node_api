@@ -4,9 +4,10 @@ const { validate } = require('express-validation')
 const passport = require('passport');
 require('../../middleware/passport')
 const auth = passport.authenticate('jwt', { session: false })
-const { vAddSlot } = require('../validations/index')
-const { addSlot } = require('../controllers/index')
+const { vEnterExitVehical } = require('../validations/index')
+const { enterVehical, exitVehical } = require('../controllers/index')
 
-router.post('/add', auth, validate(vAddSlot), addSlot);
+router.post('/enter-vehical', auth, validate(vEnterExitVehical), enterVehical);
+router.post('/exit-vehical', auth, validate(vEnterExitVehical), exitVehical);
 
 module.exports = router;

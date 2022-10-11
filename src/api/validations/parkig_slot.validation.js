@@ -1,6 +1,6 @@
 const { Joi } = require('express-validation');
 module.exports = {
-    vAddSlot: {
+    vEnterExitVehical: {
         body: Joi.object({
             propertyId: Joi.string().required(),
             code: Joi.number().required(),
