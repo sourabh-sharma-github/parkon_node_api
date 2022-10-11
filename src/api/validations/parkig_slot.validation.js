@@ -7,4 +7,9 @@ module.exports = {
             vehicalNumber: Joi.string().regex(/^\w[A-Z, 2]-\d{2,2}-\w[A-Z, 2]-\d{4,4}$/).required(),
         }).required()
     },
+    vPropertyId: {
+        body: Joi.object({
+            propertyId: Joi.string().required()
+        }).required()
+    },
 }

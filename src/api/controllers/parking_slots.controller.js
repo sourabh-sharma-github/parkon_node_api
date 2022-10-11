@@ -17,17 +17,32 @@ module.exports = {
     exitVehical: async (req, res) => {
         try {
 
-            const { code, propertyId, vehicalNumber } = req.body
-            const data = await _repo.exitVehical(code, propertyId, vehicalNumber)
-            if (!data){
+            const { code, vehicalNumber } = req.body
+            const data = await _repo.exitVehical(code, vehicalNumber)
+            if (!data) {
                 throw new Error("Invalid code/vehical number")
             }
-            
+
             return __SSR(res, "Vehical exited.");
         } catch (error) {
             return __SFR(res, error.message)
         }
+    },
+
+    slotsDashboard: async (req, res) => {
+        try {
+            const { propertyId } = req.body;
+            const counts_obj = await _repo.getPropertiesSlotCount(propertyId);
+
+            let newDate = new Date()
+            let formatted_date = newDate.getDate() + "-" + (newDate.getMonth() + 1) + "-" + newDate.getFullYear()
+            
+            return __SSR(res, "Dashboard", {
+                date: formatted_date,
+                ...counts_obj
+            });
+        } catch (error) {
+            return __SFR(res, error.message)
+        }
     }
-
-
 }
